@@ -1,16 +1,18 @@
 ORIG_PN="python-caja"
-inherit mate pygtk
+inherit mate
 
 NAME="mate-file-manager-python"
-VERSION=1.4.0
-RELEASE=2
+VERSION=1.6.0
+RELEASE=1
 CATEGORY="MATE"
 SUMMARY="Python scripting extension for MATE file manager"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
-REQUIRES="python-gobject python-gtk2.0"
+REQUIRES="python-gi"
 
-PATCH_URI="1.2.0-cygwin.patch"
+PATCH_URI="1.6.0-automake113.patch"
+
+CYGCONF_ARGS="--disable-gtk-doc"
 
 src_install() {
 	cd ${B}
