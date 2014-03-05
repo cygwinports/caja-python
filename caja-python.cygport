@@ -1,20 +1,20 @@
 ORIG_PN="python-caja"
 inherit mate
 
-NAME="mate-file-manager-python"
-VERSION=1.6.0
+NAME="caja-python"
+VERSION=1.8.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="Python scripting extension for MATE file manager"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
 REQUIRES="python-gi"
-
-PATCH_URI="1.6.0-automake113.patch"
+OBSOLETES="mate-file-manager-python"
 
 CYGCONF_ARGS="--disable-gtk-doc"
+MAKEOPTS+=" LDFLAGS=-no-undefined"
 
 src_install() {
 	cd ${B}
-	cyginstall docsdir=/usr/share/doc/${PN} examplesdir=/usr/share/doc/${PN}/examples
+	cyginstall docsdir=/usr/share/doc/${NAME} examplesdir=/usr/share/doc/${NAME}/examples
 }
