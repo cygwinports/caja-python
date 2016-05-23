@@ -2,14 +2,20 @@ ORIG_PN="python-caja"
 inherit mate
 
 NAME="caja-python"
-VERSION=1.10.0
+VERSION=1.14.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="Python scripting extension for MATE file manager"
 DESCRIPTION="MATE is a fork of the GNOME 2 desktop. It provides an intuitive
 and attractive desktop to Linux users using traditional metaphors."
-REQUIRES="python-gi"
-OBSOLETES="mate-file-manager-python"
+PATCH_URI="1.14.0-cygwin.patch"
+
+PKG_NAMES="${NAME} ${NAME}-devel"
+caja_python_REQUIRES="python-gi"
+caja_python_OBSOLETES="mate-file-manager-python"
+caja_python_CONTENTS="usr/lib/caja/ usr/share/caja/ usr/share/doc/ usr/share/locale/"
+caja_python_devel_REQUIRES=${NAME}
+caja_python_devel_CONTENTS="usr/lib/pkgconfig/caja-python.pc"
 
 CYGCONF_ARGS="--disable-gtk-doc"
 MAKEOPTS+=" LDFLAGS=-no-undefined"

@@ -1,0 +1,15 @@
+--- origsrc/python-caja-1.14.0/src/caja-python.c	2016-04-07 10:29:12.000000000 -0500
++++ src/python-caja-1.14.0/src/caja-python.c	2016-05-22 16:23:42.219410500 -0500
+@@ -164,10 +164,12 @@ caja_python_init_python (void)
+ 	if (Py_IsInitialized())
+ 		return TRUE;
+ 
++#if 0
+   	debug("g_module_open " PY_LIB_LOC "/libpython" PYTHON_VERSION "." G_MODULE_SUFFIX ".1.0");
+ 	libpython = g_module_open(PY_LIB_LOC "/libpython" PYTHON_VERSION "." G_MODULE_SUFFIX ".1.0", 0);
+ 	if (!libpython)
+ 		g_warning("g_module_open libpython failed: %s", g_module_error());
++#endif
+ 
+ 	debug("Py_Initialize");
+ 	Py_Initialize();
