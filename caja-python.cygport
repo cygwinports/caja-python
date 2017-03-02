@@ -2,7 +2,7 @@ ORIG_PN="python-caja"
 inherit mate
 
 NAME="caja-python"
-VERSION=1.14.0
+VERSION=1.16.0
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="Python scripting extension for MATE file manager"
@@ -17,7 +17,7 @@ caja_python_CONTENTS="usr/lib/caja/ usr/share/caja/ usr/share/doc/ usr/share/loc
 caja_python_devel_REQUIRES=${NAME}
 caja_python_devel_CONTENTS="usr/lib/pkgconfig/caja-python.pc"
 
-CYGCONF_ARGS="--disable-gtk-doc"
+CYGCONF_ARGS="--disable-gtk-doc --with-gtk=3.0"
 MAKEOPTS+=" LDFLAGS=-no-undefined"
 
 src_install() {
