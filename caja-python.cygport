@@ -2,7 +2,7 @@ ORIG_PN="python-caja"
 inherit mate
 
 NAME="caja-python"
-VERSION=1.18.0
+VERSION=1.18.1
 RELEASE=1
 CATEGORY="MATE"
 SUMMARY="Python scripting extension for MATE file manager"
